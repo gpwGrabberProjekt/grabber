@@ -11,7 +11,9 @@ import org.quartz.SchedulerException;
 
 import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
-
+import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
+import com.gpw.grabber.engine.database.DatabasePersistService;
+import com.gpw.grabber.engine.database.IDatabasePersistService;
 import com.gpw.grabber.engine.parsing.GpwGrabberParsingEngine;
 import com.gpw.grabber.engine.parsing.IGpwGrabberParsingEngine;
 
@@ -39,10 +41,10 @@ public class GrabberJob implements Job {
 		grabSpolkiFromWebPage();
 		
 		
-		//IDatabasePersistService dbService=new DatabasePersistService();
-		//for (ISpolka iSpolka : spolki) {
-			//dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
-		//}
+		IDatabasePersistService dbService=new DatabasePersistService();
+		for (ISpolka iSpolka : spolki) {
+			dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
+		}
 		//DatabasePersistService dbService=new DatabasePersistService();
 		//dbService.persist();
 		
