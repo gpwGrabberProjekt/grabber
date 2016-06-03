@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Spolki")
-public class SpolkaDAO implements  ISpolkaDAO {
+public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 	
 	private String Spolkanazwa;
 	private String Spolkaskrot;
