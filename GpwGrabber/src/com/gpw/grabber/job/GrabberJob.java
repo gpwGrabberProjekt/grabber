@@ -45,22 +45,7 @@ public class GrabberJob implements Job {
 		//}
 		//DatabasePersistService dbService=new DatabasePersistService();
 		//dbService.persist();
-		//Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		/* test
-		session.beginTransaction();
-		Calendar calendar = Calendar.getInstance();		
-		INewSpolkaDAO spolka = new NewSpolkaDAO();
-		spolka.setKursbiez(1.0);
-		spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
-		spolka.setSpolkanazwa("ABC");
-		spolka.setSpolkaskrot("adbd");
-		
-		session.save(spolka);
-		
-		session.getTransaction().commit();
-		session.getSessionFactory().close();
-		*/
 		
 		
 		
