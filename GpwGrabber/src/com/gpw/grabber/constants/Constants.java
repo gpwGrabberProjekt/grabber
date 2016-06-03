@@ -1,5 +1,10 @@
 package com.gpw.grabber.constants;
 
+
+/**
+ * Stale
+ *  
+ */
 public class Constants {
 
 	

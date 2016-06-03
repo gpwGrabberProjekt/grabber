@@ -1,5 +1,9 @@
 package com.gpw.grabber.data;
 
+/**
+ * Interfejs definiujacy opracje na Spolce
+ *  
+ */
 public interface ISpolka {
 
 	public String getDataAktualizacji();

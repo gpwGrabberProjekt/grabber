@@ -2,15 +2,19 @@ package com.gpw.grabber.engine.database;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+/**
+ * Klasa odpowiedzialna za konfiguracje 
+ * @see http://hibernate.org/orm/documentation/5.2/
+ * 
+ */
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory = buildSessionFactory();
 
 	/**
-	 * Fabryka sesji dla Hibernate
+	 * Fabryka sesji dla Hibernate wraz z odczytem konfiguracji
 	 * 
 	 */
-	
-	private static SessionFactory buildSessionFactory() {
+		private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
 			return new Configuration().configure().buildSessionFactory();
@@ -24,7 +28,10 @@ public class HibernateUtil {
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
-
+	/**
+	 * Zamkniecie puli polaczen
+	 * 
+	 */
 	public static void shutdown() {
 		// Close caches and connection pools
 		getSessionFactory().close();

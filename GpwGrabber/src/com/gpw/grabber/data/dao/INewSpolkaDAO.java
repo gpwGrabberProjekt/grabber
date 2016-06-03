@@ -6,7 +6,7 @@ import java.util.Date;
 public interface INewSpolkaDAO {
 
 	/**
-	 * Mapowanie przez adnotacje spolkaNazwa na Nazwa
+	 * Interfejs okreslajacy operacji dla Spolki DB
 	 */
 	String getSpolkanazwa();
 

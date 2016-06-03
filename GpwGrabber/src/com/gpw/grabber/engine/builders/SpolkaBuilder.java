@@ -9,7 +9,10 @@ import java.util.List;
 
 import com.gpw.grabber.data.ISpolka;
 import com.gpw.grabber.data.Spolka;
-
+/**
+ * Klasa odpowiedzialna z tworzenie obiektow typu Spolka na podstawie przetworzonych wierszy z strony WWW
+ * 
+ */
 public class SpolkaBuilder {
 	private static int counter = 0;
 
@@ -35,7 +38,9 @@ public class SpolkaBuilder {
 		return spolka;
 
 	}
-
+	/**
+	 * Metoda konwertujaca tekst  wartości typu Double
+	 */
 	private static double convertToDouble(String string) {
 
 		if (!string.contentEquals("-") && !string.contentEquals("PKC/PCR")) {
@@ -47,7 +52,9 @@ public class SpolkaBuilder {
 			return 0;
 		}
 	}
-
+	/**
+	 * Metoda konwetujaca Date pobrana z tabeli z strony WWW na format Java 
+	 */
 	private static Date convertToDate(String date) {
 
 		if (!date.contentEquals("-")) {
