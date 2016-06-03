@@ -15,7 +15,7 @@ import java.util.Date;
  */
 
 @Entity
-@Table(name = "DBSpolki")
+@Table(name = "Spolki")
 public class SpolkaDAO implements ISpolkaDAO {
 	
 	private String spolkaNazwa;
@@ -309,11 +309,12 @@ public class SpolkaDAO implements ISpolkaDAO {
 	 * 
 	 */
 
-
+	@Id
 	@Column(name = "DataAktualizacji")
 	public Date getDataAktualizacji() {
 		java.util.Date date= new java.util.Date();
 		Timestamp znacznik = new Timestamp(date.getTime());
+		
 		return znacznik;
 	}
 
@@ -321,8 +322,8 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 
-	public void setDataAktualizacji(Date dataAktualizacji) {
-		DataAktualizacji = dataAktualizacji;
+	public void setDataAktualizacji() {
+		DataAktualizacji = new Timestamp(new java.util.Date().getTime());
 	};
 
 	

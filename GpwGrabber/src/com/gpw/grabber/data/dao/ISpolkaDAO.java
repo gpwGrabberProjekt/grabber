@@ -29,7 +29,8 @@ public interface ISpolkaDAO {
 	public double getpDtygodnieMAX();
 	public void setpDtygodnieMAX(double pDtygodnieMAX);
 	public Date getDataAktualizacji();
-	public void setDataAktualizacji(Date dataAktualizacji);
+	public void setDataAktualizacji();
+	
 	
 
 }
