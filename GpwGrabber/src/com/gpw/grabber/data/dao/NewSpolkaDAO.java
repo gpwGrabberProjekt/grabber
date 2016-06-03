@@ -76,7 +76,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	}
 	
 	@Id
-	@Column(name = "SSkrot", unique = true, nullable = false)
+	@Column(name = "Skrot", unique = true, nullable = false)
 	public String getSpolkaskrot() {
 		return this.Spolkaskrot;
 	}
