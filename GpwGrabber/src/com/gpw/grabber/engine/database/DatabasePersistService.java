@@ -13,6 +13,10 @@ import com.gpw.grabber.engine.database.HibernateUtil;
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		
+		
+		session.getTransaction().commit();
+		session.getSessionFactory().close();
+		
 	}
 	
 }

@@ -13,5 +13,6 @@
         
         <property name="hibernate.current_session_context_class">thread</property>
         <mapping resource="Event.hbm.xml"/>
+        <mapping class="com.gpw.grabber.data.dao.SpolkaDAO"></mapping>
     </session-factory>
 </hibernate-configuration>
