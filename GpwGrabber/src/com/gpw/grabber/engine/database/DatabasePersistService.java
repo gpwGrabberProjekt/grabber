@@ -1,11 +1,17 @@
 package com.gpw.grabber.engine.database;
 
+import org.hibernate.Session;
+
 import com.gpw.grabber.data.dao.ISpolkaDAO;
 
-public class DatabasePersistService implements IDatabasePersistService {
+import com.gpw.grabber.engine.database.HibernateUtil;
+
+	public class DatabasePersistService implements IDatabasePersistService {
 
 	public void persist(ISpolkaDAO spolkaDAO) {
-		// TODO Auto-generated method stub
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
 		
 	}
 	

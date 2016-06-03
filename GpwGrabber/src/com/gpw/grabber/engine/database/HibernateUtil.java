@@ -2,9 +2,14 @@ package com.gpw.grabber.engine.database;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class hibernateutil {
+public class HibernateUtil {
 	private static final SessionFactory sessionFactory = buildSessionFactory();
 
+	/**
+	 * Fabryka sesji dla Hibernate
+	 * 
+	 */
+	
 	private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
