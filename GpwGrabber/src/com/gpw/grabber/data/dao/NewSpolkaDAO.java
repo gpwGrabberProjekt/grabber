@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Spolki")
-public class NewSpolkaDAO implements java.io.Serializable, INewSpolkaDAO {
+public class NewSpolkaDAO implements INewSpolkaDAO {
 
 	private String Spolkanazwa;
 	private String Spolkaskrot;

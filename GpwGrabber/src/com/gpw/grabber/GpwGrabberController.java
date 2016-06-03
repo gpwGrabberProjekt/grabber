@@ -1,7 +1,6 @@
 package com.gpw.grabber;
 
 import java.net.URL;
-import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 import org.quartz.CronScheduleBuilder;

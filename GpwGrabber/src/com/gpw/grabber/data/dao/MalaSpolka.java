@@ -10,7 +10,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "DBmala")
-public class MalaSpolka implements java.io.Serializable {
+public class MalaSpolka  {
+	
+	/**
+	 * 
+	 */
 	
 	private String Spolkaskrot;
 	private Timestamp Dataaktualizacji;

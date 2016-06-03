@@ -1,9 +1,8 @@
 package com.gpw.grabber.job;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
-import org.hibernate.Session;
+
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -12,13 +11,7 @@ import org.quartz.SchedulerException;
 
 import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
-import com.gpw.grabber.data.dao.NewSpolkaDAO;
-import com.gpw.grabber.data.dao.INewSpolkaDAO;
-import com.gpw.grabber.data.dao.MalaSpolka;
-import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
-import com.gpw.grabber.engine.database.DatabasePersistService;
-import com.gpw.grabber.engine.database.HibernateUtil;
-import com.gpw.grabber.engine.database.IDatabasePersistService;
+
 import com.gpw.grabber.engine.parsing.GpwGrabberParsingEngine;
 import com.gpw.grabber.engine.parsing.IGpwGrabberParsingEngine;
 
@@ -52,7 +45,7 @@ public class GrabberJob implements Job {
 		//}
 		//DatabasePersistService dbService=new DatabasePersistService();
 		//dbService.persist();
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		//Session session = HibernateUtil.getSessionFactory().openSession();
 		
 		/* test
 		session.beginTransaction();

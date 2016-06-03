@@ -1,7 +1,5 @@
 package com.gpw.grabber.data;
 
-import java.util.Date;
-
 public interface ISpolka {
 
 	public String getDataAktualizacji();
