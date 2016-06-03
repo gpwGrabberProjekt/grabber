@@ -29,6 +29,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+
+/**
+ * Kontroler
+ */
+
 public class GpwGrabberController implements Initializable {
 
 	private ObservableList<Spolka> data = FXCollections.observableArrayList();
@@ -40,6 +45,11 @@ public class GpwGrabberController implements Initializable {
 	private JobDetail job;
 	private Boolean isSeriesAdded = false;
 
+	
+	/**
+	 * Deklaracja dla JavaFX Scene Builder 
+	 */
+	
 	@FXML
 	private TableView<Spolka> table;
 	@FXML
@@ -113,6 +123,17 @@ public class GpwGrabberController implements Initializable {
 		System.out.println("Start grabber job");
 	}
 
+	/**
+	 * Deklaracja metod JavaFX Scene Builder 
+	 */
+	
+	
+	/**
+	 * 
+	 * @param dataaktualizacji Znacznik generowany przez aplikacje
+	 */
+	
+	
 	@FXML
 	public void loadDataOfSpolka() {
 		String selectedSpolka = comboSpolkiList.getValue();

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 /**
- * Data Access Object. SpolkaDAO  - obiekt do w formacie dla bazy danych
+ * Data Access Object. SpolkaDAO  - obiekt w formacie dla bazy danych
  * Wykozystano Hibernate / JPA Annotation code
  */
 
@@ -33,35 +33,46 @@ public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 	private double Pdtygodniemax;
 	private Timestamp Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
 	
+	/**
+	 * @param spolkanazwa  Nazwa Spolki w DB
+	 * @param spolkaskrot  Skrot spolki W DB
+	 * @param kursotw 		Wartosc kursu otwarcia w DB
+	 * @param kursmin		Wartosc kursu minimalna z danej chwili czasowej w BD
+	 * @param kursmax		Wartosc kursu maksymalna z danej chwili czasowej w BD
+	 * @param kursbiez		Wartosc kursu biezaca z danej chwili czasowej w BD
+	 * @param zmprocdzienna Zmiana procentowa z danej chwili czasowej w BD
+	 * @param czasostzmiany	Data ostatniej zmiany z danej chwili czasowej w BD
+	 * @param obrotszt		Obrót w szt. z danej chwili czasowej w BD
+	 * @param obrotpln		Obrót w PLN z danej chwili czasowej w BD
+	 * @param pdtygodniemin Zmiana min z 52 tyg z danej chwili czasowej w BD
+	 * @param pdtygodniemax Zmiana max z 52 tyg z danej chwili czasowej w BD
+	 * @param dataaktualizacji Znacznik generowany przez aplikacje
+	 */
 	
 	
 
 	public SpolkaDAO() {}
 	
 	
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.ISpolkaDAO#getSpolkanazwa()
+	/* 
+	 * Mapowanie na kolumne w bazie danych Nazwa spolki -> Nazwa
 	 */
 	@Column(name = "Nazwa", length = 128)
 	public String getSpolkanazwa() {
 		return this.Spolkanazwa;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setSpolkanazwa(java.lang.String)
+	/* 
+	 * Ustawienie nazwy Spolki dla DB
 	 */
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.ISpolkaDAO#setSpolkanazwa(java.lang.String)
-	 */
+	
 	public void setSpolkanazwa(String spolkanazwa) {
 		this.Spolkanazwa = spolkanazwa;
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getSpolkaskrot()
-	 */
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.ISpolkaDAO#getSpolkaskrot()
+	
+	/* 
+	 * Mapowanie na kolumne w bazie danych Skrot spolki -> Skrot
 	 */
 	@Id
 	@Column(name = "Skrot", unique = true, nullable = false)
@@ -69,11 +80,9 @@ public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 		return this.Spolkaskrot;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setSpolkaskrot(java.lang.String)
-	 */
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.ISpolkaDAO#setSpolkaskrot(java.lang.String)
+
+	/* 
+	 * Ustawienie nazwy Skrotu spolki dla DB
 	 */
 	public void setSpolkaskrot(String spolkaskrot) {
 		this.Spolkaskrot = spolkaskrot;

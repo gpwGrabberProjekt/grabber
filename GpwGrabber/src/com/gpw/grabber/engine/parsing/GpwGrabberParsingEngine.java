@@ -56,6 +56,8 @@ public class GpwGrabberParsingEngine implements IGpwGrabberParsingEngine {
 		return spolki;
 
 	}
+	
+	
 
 	public ArrayList<String> getListOfSpolkaNames() {
 		ArrayList<ISpolka> listOfSpolki = parseWebPage();
