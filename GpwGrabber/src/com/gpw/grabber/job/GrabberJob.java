@@ -20,6 +20,10 @@ import com.gpw.grabber.engine.parsing.IGpwGrabberParsingEngine;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
+/**
+ * Klasa odpowiedzialna tworzenie zadan wykonywanych 
+ * 
+ */
 public class GrabberJob implements Job {
 	private ObservableList<ISpolka> data;
 	private TableView<ISpolka> table;
@@ -28,7 +32,7 @@ public class GrabberJob implements Job {
 
 	@SuppressWarnings("unchecked")
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		System.out.println("PRINT MESSAGE EVERY 1 minute");
+		System.out.println("PRINT MESSAGE EVERY - job");
 
 		SchedulerContext schedulerContext = null;
 		try {

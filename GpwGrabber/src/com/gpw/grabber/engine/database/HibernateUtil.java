@@ -4,7 +4,7 @@ import org.hibernate.cfg.Configuration;
 
 /**
  * Klasa odpowiedzialna za konfiguracje 
- * @see http://hibernate.org/orm/documentation/5.2/
+ * @see <a href="http://hibernate.org/orm/documentation/5.2/">Hibernate DOC</a>
  * 
  */
 public class HibernateUtil {

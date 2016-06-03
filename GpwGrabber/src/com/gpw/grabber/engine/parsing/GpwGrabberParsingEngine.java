@@ -12,6 +12,11 @@ import org.jsoup.select.Elements;
 import com.gpw.grabber.data.ISpolka;
 import com.gpw.grabber.engine.builders.SpolkaBuilder;
 
+
+/**
+ * Klasa odpowiedzialna analizowe ciągu znaków w celu ustalenia jego struktury
+ * @see <a href="https://jsoup.org/">https://jsoup.org/</a>
+ */
 public class GpwGrabberParsingEngine implements IGpwGrabberParsingEngine {
 
 	public ArrayList<ISpolka> parseWebPage() {

@@ -4,6 +4,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * Klasa odpowiedzialna za Spolke
+ *  
+ */
 public class Spolka implements ISpolka {
 
 	private SimpleIntegerProperty id;
