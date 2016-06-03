@@ -1,11 +1,13 @@
 package com.gpw.grabber.engine.database;
 
 import org.hibernate.Session;
+import java.util.Calendar;
+import java.util.Date;
 import org.hibernate.Query;
 
 
 import java.util.Arrays;
-import java.util.Date;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,20 +31,7 @@ import com.gpw.grabber.engine.database.HibernateUtil;
 	//public void persist(ISpolkaDAO spolkaDAO) {
 		public void persist() {
 		
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		
-		session.beginTransaction();
-		
-		
-		// smieci dodane do testowania czy wogole cos sie tworzy
-		MalaSpolka spolka = new MalaSpolka();
-		spolka.setSpolkaskrot("abc");
-		spolka.setDataaktualizacji();
-		
-		session.save(spolka);
-		
-		session.getTransaction().commit();
-		session.getSessionFactory().close();
 		
 	}
 	

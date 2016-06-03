@@ -32,8 +32,8 @@ public class MalaSpolka implements java.io.Serializable {
 		return Dataaktualizacji;
 	}
 
-	public void setDataaktualizacji() {
-		Dataaktualizacji =  new Timestamp(new java.util.Date().getTime());
+	public void setDataaktualizacji(Timestamp Dataaktualizacji) {
+		this.Dataaktualizacji =  new Timestamp(new java.util.Date().getTime());
 	}
 	
 	

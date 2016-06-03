@@ -1,6 +1,7 @@
 package com.gpw.grabber.job;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.hibernate.Session;
 import org.quartz.Job;
@@ -57,7 +58,9 @@ public class GrabberJob implements Job {
 		// smieci dodane do testowania czy wogole cos sie tworzy
 		MalaSpolka spolka = new MalaSpolka();
 		spolka.setSpolkaskrot("abc");
-		spolka.setDataaktualizacji();
+		Calendar calendar = Calendar.getInstance();
+		//new java.sql.Timestamp(calendar.getTime().getTime());
+		spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
 		
 		session.save(spolka);
 		
