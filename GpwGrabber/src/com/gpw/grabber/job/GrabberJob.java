@@ -12,6 +12,7 @@ import org.quartz.SchedulerException;
 
 import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
+import com.gpw.grabber.data.dao.NewSpolkaDAO;
 import com.gpw.grabber.data.dao.MalaSpolka;
 import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
 import com.gpw.grabber.engine.database.DatabasePersistService;
@@ -56,11 +57,17 @@ public class GrabberJob implements Job {
 		
 		
 		// smieci dodane do testowania czy wogole cos sie tworzy
-		MalaSpolka spolka = new MalaSpolka();
-		spolka.setSpolkaskrot("abc");
+		//MalaSpolka spolka = new MalaSpolka();
+		//spolka.setSpolkaskrot("abc");
 		Calendar calendar = Calendar.getInstance();
 		//new java.sql.Timestamp(calendar.getTime().getTime());
+		//spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
+		
+		NewSpolkaDAO spolka = new NewSpolkaDAO();
+		spolka.setKursbiez(1.0);
 		spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
+		spolka.setSpolkanazwa("ABC");
+		spolka.setSpolkaskrot("adbd");
 		
 		session.save(spolka);
 		

@@ -24,8 +24,48 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	private double Obrotpln;
 	private double Pdtygodniemin;
 	private double Pdtygodniemax;
-	private Timestamp Dataaktualizacji;
+	private Timestamp Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
+	
+	
+	public NewSpolkaDAO() {}
 
+	/**
+	 * @param spolkanazwa
+	 * @param spolkaskrot
+	 * @param kursotw
+	 * @param kursmin
+	 * @param kursmax
+	 * @param kursbiez
+	 * @param zmprocdzienna
+	 * @param czasostzmiany
+	 * @param obrotszt
+	 * @param obrotpln
+	 * @param pdtygodniemin
+	 * @param pdtygodniemax
+	 * @param dataaktualizacji
+	 */
+	public NewSpolkaDAO(String spolkanazwa, String spolkaskrot, double kursotw, double kursmin, double kursmax,
+			double kursbiez, double zmprocdzienna, String czasostzmiany, double obrotszt, double obrotpln,
+			double pdtygodniemin, double pdtygodniemax, Timestamp dataaktualizacji) {
+		super();
+		Spolkanazwa = spolkanazwa;
+		Spolkaskrot = spolkaskrot;
+		Kursotw = kursotw;
+		Kursmin = kursmin;
+		Kursmax = kursmax;
+		Kursbiez = kursbiez;
+		Zmprocdzienna = zmprocdzienna;
+		Czasostzmiany = czasostzmiany;
+		Obrotszt = obrotszt;
+		Obrotpln = obrotpln;
+		Pdtygodniemin = pdtygodniemin;
+		Pdtygodniemax = pdtygodniemax;
+		Dataaktualizacji = dataaktualizacji;
+	}
+	
+	/**
+	 * Mapowanie przez adnotacje spolkaNazwa na Nazwa
+	 */
 	@Column(name = "Nazwa", length = 128)
 	public String getSpolkanazwa() {
 		return this.Spolkanazwa;
@@ -45,6 +85,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 		this.Spolkaskrot = spolkaskrot;
 	}
 
+	@Column(name = "KursOtw")
 	public double getKursotw() {
 		return this.Kursotw;
 	}
@@ -52,7 +93,8 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	public void setKursotw(double kursotw) {
 		this.Kursotw = kursotw;
 	}
-
+	
+	@Column(name = "KursMin")
 	public double getKursmin() {
 		return this.Kursmin;
 	}
@@ -60,7 +102,8 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	public void setKursmin(double kursmin) {
 		this.Kursmin = kursmin;
 	}
-
+	
+	@Column(name = "KursMax")
 	public double getKursmax() {
 		return this.Kursmax;
 	}
@@ -68,7 +111,8 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	public void setKursmax(double kursmax) {
 		this.Kursmax = kursmax;
 	}
-
+	
+	@Column(name = "KursBiez")
 	public double getKursbiez() {
 		return this.Kursbiez;
 	}
@@ -76,15 +120,17 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	public void setKursbiez(double kursbiez) {
 		this.Kursbiez = kursbiez;
 	}
-
+	
+	@Column(name = "zmProcDzienna")
 	public double getZmprocdzienna() {
 		return this.Zmprocdzienna;
 	}
-
+	
 	public void setZmprocdzienna(double zmprocdzienna) {
 		this.Zmprocdzienna = zmprocdzienna;
 	}
-
+	
+	@Column(name = "czasOstZmiany")
 	public String getCzasostzmiany() {
 		return this.Czasostzmiany;
 	}
@@ -93,6 +139,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 		this.Czasostzmiany = czasostzmiany;
 	}
 
+	@Column(name = "ObrotSzt")
 	public double getObrotszt() {
 		return this.Obrotszt;
 	}
@@ -101,6 +148,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 		this.Obrotszt = obrotszt;
 	}
 
+	@Column(name = "ObrotPLN")
 	public double getObrotpln() {
 		return this.Obrotpln;
 	}
@@ -109,6 +157,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 		this.Obrotpln = obrotpln;
 	}
 
+	@Column(name = "pDtygodnieMIN")
 	public double getPdtygodniemin() {
 		return this.Pdtygodniemin;
 	}
@@ -117,6 +166,7 @@ public class NewSpolkaDAO implements java.io.Serializable {
 		this.Pdtygodniemin = pdtygodniemin;
 	}
 
+	@Column(name = "pDtygodnieMAX")
 	public double getPdtygodniemax() {
 		return this.Pdtygodniemax;
 	}
@@ -126,15 +176,15 @@ public class NewSpolkaDAO implements java.io.Serializable {
 	}
 	
 	@Id
-	@Column(name = "DataAktualizacji")
+	@Column(name = "DataAktualizacji",unique = true, nullable = false)
 	public Date getDataaktualizacji() {
-		java.util.Date date= new java.util.Date();
-		Timestamp Dataaktualizacji = new Timestamp(date.getTime());
-		return this.Dataaktualizacji;
+		return Dataaktualizacji;
 	}
 
-	public void setDataaktualizacji() {
-		this.Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
+	public void setDataaktualizacji(Timestamp Dataaktualizacji) {
+		this.Dataaktualizacji =  new Timestamp(new java.util.Date().getTime());
 	}
+	
 
+	
 }
