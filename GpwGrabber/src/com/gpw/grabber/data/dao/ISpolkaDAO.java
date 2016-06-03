@@ -22,7 +22,7 @@ public interface ISpolkaDAO {
 	public void setCzasOstZmiany(String czasOstZmiany);
 	public double getObrotSzt();
 	public void setObrotSzt(double obrotSzt);
-	public void getObrotPLN();
+	public double getObrotPLN();
 	public void setObrotPLN(double obrotPLN);
 	public double getpDtygodnieMIN();
 	public void setpDtygodnieMIN(double pDtygodnieMIN);
