@@ -25,11 +25,11 @@ import com.gpw.grabber.engine.database.HibernateUtil;
  * 
  */
 
-	//public class DatabasePersistService implements IDatabasePersistService {
-	public class DatabasePersistService {
+	public class DatabasePersistService implements IDatabasePersistService {
+	//public class DatabasePersistService {
 
-	//public void persist(ISpolkaDAO spolkaDAO) {
-		public void persist() {
+	public void persist(ISpolkaDAO spolkaDAO) {
+		//public void persist() {
 		
 		
 		

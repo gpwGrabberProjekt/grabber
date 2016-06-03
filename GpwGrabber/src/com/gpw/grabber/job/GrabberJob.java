@@ -13,6 +13,7 @@ import org.quartz.SchedulerException;
 import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
 import com.gpw.grabber.data.dao.NewSpolkaDAO;
+import com.gpw.grabber.data.dao.INewSpolkaDAO;
 import com.gpw.grabber.data.dao.MalaSpolka;
 import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
 import com.gpw.grabber.engine.database.DatabasePersistService;
@@ -45,25 +46,18 @@ public class GrabberJob implements Job {
 		grabSpolkiFromWebPage();
 		
 		
-		/*IDatabasePersistService dbService=new DatabasePersistService();
-		for (ISpolka iSpolka : spolki) {
-			dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
-		}*/
+		//IDatabasePersistService dbService=new DatabasePersistService();
+		//for (ISpolka iSpolka : spolki) {
+			//dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
+		//}
 		//DatabasePersistService dbService=new DatabasePersistService();
 		//dbService.persist();
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
+		/* test
 		session.beginTransaction();
-		
-		
-		// smieci dodane do testowania czy wogole cos sie tworzy
-		//MalaSpolka spolka = new MalaSpolka();
-		//spolka.setSpolkaskrot("abc");
-		Calendar calendar = Calendar.getInstance();
-		//new java.sql.Timestamp(calendar.getTime().getTime());
-		//spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
-		
-		NewSpolkaDAO spolka = new NewSpolkaDAO();
+		Calendar calendar = Calendar.getInstance();		
+		INewSpolkaDAO spolka = new NewSpolkaDAO();
 		spolka.setKursbiez(1.0);
 		spolka.setDataaktualizacji(new java.sql.Timestamp(calendar.getTime().getTime()));
 		spolka.setSpolkanazwa("ABC");
@@ -73,7 +67,7 @@ public class GrabberJob implements Job {
 		
 		session.getTransaction().commit();
 		session.getSessionFactory().close();
-		
+		*/
 		
 		
 		
