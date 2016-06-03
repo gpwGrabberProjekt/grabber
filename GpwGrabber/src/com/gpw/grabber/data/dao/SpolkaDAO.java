@@ -6,8 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Entity;
 import java.sql.Timestamp;
-import java.util.Date;
+
 
 /**
  * Data Access Object. SpolkaDAO  - obiekt do w formacie dla bazy danych
@@ -18,19 +21,19 @@ import java.util.Date;
 @Table(name = "Spolki")
 public class SpolkaDAO implements ISpolkaDAO {
 	
-	private String spolkaNazwa;
-	private String spolkaSkrot;
-	private double KursOtw;
-	private double KursMin;
-	private double KursMax;
-	private double KursBiez;
-	private double zmProcDzienna;
-	private String czasOstZmiany;
-	private double ObrotSzt;         
-	private double ObrotPLN;     
-	private double pDtygodnieMIN;    
-	private double pDtygodnieMAX;  
-    private Date DataAktualizacji;
+	private String Spolkanazwa;
+	private String Spolkaskrot;
+	private double Kursotw;
+	private double Kursmin;
+	private double Kursmax;
+	private double Kursbiez;
+	private double Zmprocdzienna;
+	private String Czasostzmiany;
+	private double Obrotszt;         
+	private double Obrotpln;     
+	private double Pdtygodniemin;    
+	private double Pdtygodniemax;  
+    private Date Dataaktualizacji;
 	
 	
 	
@@ -54,27 +57,68 @@ public class SpolkaDAO implements ISpolkaDAO {
 	
 	
 
-	public SpolkaDAO() {
-	}
+	public SpolkaDAO() {}
+	
+	
 
 
-	public SpolkaDAO(String spolkaNazwa, String spolkaSkrot, double kursOtw, double kursMin, double kursMax,
-			double kursBiez, double zmProcDzienna, String czasOstZmiany, double obrotSzt, double obrotPLN,
-			double pDtygodnieMIN, double pDtygodnieMAX) {
+
+
+
+
+
+
+
+
+
+
+
+	/**
+	 * @param spolkanazwa
+	 * @param spolkaskrot
+	 * @param kursotw
+	 * @param kursmin
+	 * @param kursmax
+	 * @param kursbiez
+	 * @param zmprocdzienna
+	 * @param czasostzmiany
+	 * @param obrotszt
+	 * @param obrotpln
+	 * @param pdtygodniemin
+	 * @param pdtygodniemax
+	 * @param dataaktualizacji
+	 */
+	public SpolkaDAO(String spolkanazwa, String spolkaskrot, double kursotw, double kursmin, double kursmax,
+			double kursbiez, double zmprocdzienna, String czasostzmiany, double obrotszt, double obrotpln,
+			double pdtygodniemin, double pdtygodniemax, Date dataaktualizacji) {
 		super();
-		this.spolkaNazwa = spolkaNazwa;
-		this.spolkaSkrot = spolkaSkrot;
-		this.KursOtw = kursOtw;
-		this.KursMin = kursMin;
-		this.KursMax = kursMax;
-		this.KursBiez = kursBiez;
-		this.zmProcDzienna = zmProcDzienna;
-		this.czasOstZmiany = czasOstZmiany;
-		this.ObrotSzt = obrotSzt;
-		this.ObrotPLN = obrotPLN;
-		this.pDtygodnieMIN = pDtygodnieMIN;
-		this.pDtygodnieMAX = pDtygodnieMAX;
+		Spolkanazwa = spolkanazwa;
+		Spolkaskrot = spolkaskrot;
+		Kursotw = kursotw;
+		Kursmin = kursmin;
+		Kursmax = kursmax;
+		Kursbiez = kursbiez;
+		Zmprocdzienna = zmprocdzienna;
+		Czasostzmiany = czasostzmiany;
+		Obrotszt = obrotszt;
+		Obrotpln = obrotpln;
+		Pdtygodniemin = pdtygodniemin;
+		Pdtygodniemax = pdtygodniemax;
+		Dataaktualizacji = dataaktualizacji;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	/**
@@ -82,12 +126,12 @@ public class SpolkaDAO implements ISpolkaDAO {
 	 */
 	@Column(name = "Nazwa", length = 128)
 	public String getSpolkaNazwa() {
-		return spolkaNazwa;
+		return Spolkanazwa;
 	}
 
 
 	public void setSpolkaNazwa(String spolkaNazwa) {
-		this.spolkaNazwa = spolkaNazwa;
+		this.Spolkanazwa = spolkaNazwa;
 	}
 
 	/**
@@ -97,7 +141,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 	@Id
 	@Column(name = "Skrot",nullable = false, length = 16)
 	public String getSpolkaSkrot() {
-		return spolkaSkrot;
+		return Spolkaskrot;
 	}
 
 
@@ -105,7 +149,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	
 	public void setSpolkaSkrot(String spolkaSkrot) {
-		this.spolkaSkrot = spolkaSkrot;
+		this.Spolkaskrot = spolkaSkrot;
 	}
 
 
@@ -115,7 +159,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 	 */
 	@Column(name = "KursOtw")
 	public double getKursOtw() {
-		return KursOtw;
+		return Kursotw;
 	}
 
 
@@ -123,7 +167,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setKursOtw(double kursOtw) {
-		KursOtw = kursOtw;
+		Kursotw = kursOtw;
 	}
 
 
@@ -135,7 +179,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 	 */
 	@Column(name = "KursMin")
 	public double getKursMin() {
-		return KursMin;
+		return Kursmin;
 	}
 
 
@@ -143,7 +187,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setKursMin(double kursMin) {
-		KursMin = kursMin;
+		Kursmin = kursMin;
 	}
 
 
@@ -154,7 +198,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "KursMax")
 	public double getKursMax() {
-		return KursMax;
+		return Kursmax;
 	}
 
 
@@ -162,7 +206,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setKursMax(double kursMax) {
-		KursMax = kursMax;
+		Kursmax = kursMax;
 	}
 
 
@@ -173,7 +217,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "KursBiez")
 	public double getKursBiez() {
-		return KursBiez;
+		return Kursbiez;
 	}
 
 
@@ -181,7 +225,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setKursBiez(double kursBiez) {
-		KursBiez = kursBiez;
+		Kursbiez = kursBiez;
 	}
 
 
@@ -192,7 +236,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "zmProcDzienna")
 	public double getZmProcDzienna() {
-		return zmProcDzienna;
+		return Zmprocdzienna;
 	}
 
 
@@ -200,7 +244,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setZmProcDzienna(double zmProcDzienna) {
-		this.zmProcDzienna = zmProcDzienna;
+		this.Zmprocdzienna = zmProcDzienna;
 	}
 
 
@@ -212,7 +256,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "czasOstZmiany")
 	public String getCzasOstZmiany() {
-		return czasOstZmiany;
+		return Czasostzmiany;
 	}
 
 
@@ -220,7 +264,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setCzasOstZmiany(String czasOstZmiany) {
-		this.czasOstZmiany = czasOstZmiany;
+		this.Czasostzmiany = czasOstZmiany;
 	}
 
 
@@ -232,7 +276,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "ObrotSzt")
 	public double getObrotSzt() {
-		return ObrotSzt;
+		return Obrotszt;
 	}
 
 
@@ -240,7 +284,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setObrotSzt(double obrotSzt) {
-		ObrotSzt = obrotSzt;
+		Obrotszt = obrotSzt;
 	}
 
 
@@ -252,7 +296,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "ObrotPLN")
 	public double getObrotPLN() {
-		return ObrotPLN;
+		return Obrotpln;
 	}
 
 
@@ -260,7 +304,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setObrotPLN(double obrotPLN) {
-		ObrotPLN = obrotPLN;
+		Obrotpln = obrotPLN;
 	}
 
 
@@ -272,7 +316,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "pDtygodnieMIN")
 	public double getpDtygodnieMIN() {
-		return pDtygodnieMIN;
+		return Pdtygodniemin;
 	}
 
 
@@ -280,7 +324,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setpDtygodnieMIN(double pDtygodnieMIN) {
-		this.pDtygodnieMIN = pDtygodnieMIN;
+		this.Pdtygodniemin = pDtygodnieMIN;
 	}
 
 	/**
@@ -292,7 +336,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 	@Column(name = "pDtygodnieMAX")
 	public double getpDtygodnieMAX() {
-		return pDtygodnieMAX;
+		return Pdtygodniemax;
 	}
 
 
@@ -300,7 +344,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setpDtygodnieMAX(double pDtygodnieMAX) {
-		this.pDtygodnieMAX = pDtygodnieMAX;
+		this.Pdtygodniemax = pDtygodnieMAX;
 	}
 
 	/**
@@ -323,7 +367,7 @@ public class SpolkaDAO implements ISpolkaDAO {
 
 
 	public void setDataAktualizacji() {
-		DataAktualizacji = new Timestamp(new java.util.Date().getTime());
+		Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
 	};
 
 	

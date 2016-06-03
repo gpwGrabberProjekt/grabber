@@ -2,6 +2,7 @@ package com.gpw.grabber.job;
 
 import java.util.ArrayList;
 
+import org.hibernate.Session;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -10,8 +11,10 @@ import org.quartz.SchedulerException;
 
 import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
+import com.gpw.grabber.data.dao.MalaSpolka;
 import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
 import com.gpw.grabber.engine.database.DatabasePersistService;
+import com.gpw.grabber.engine.database.HibernateUtil;
 import com.gpw.grabber.engine.database.IDatabasePersistService;
 import com.gpw.grabber.engine.parsing.GpwGrabberParsingEngine;
 import com.gpw.grabber.engine.parsing.IGpwGrabberParsingEngine;
@@ -40,10 +43,28 @@ public class GrabberJob implements Job {
 		grabSpolkiFromWebPage();
 		
 		
-		IDatabasePersistService dbService=new DatabasePersistService();
+		/*IDatabasePersistService dbService=new DatabasePersistService();
 		for (ISpolka iSpolka : spolki) {
 			dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
-		}
+		}*/
+		//DatabasePersistService dbService=new DatabasePersistService();
+		//dbService.persist();
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		session.beginTransaction();
+		
+		
+		// smieci dodane do testowania czy wogole cos sie tworzy
+		MalaSpolka spolka = new MalaSpolka();
+		spolka.setSpolkaskrot("abc");
+		spolka.setDataaktualizacji();
+		
+		session.save(spolka);
+		
+		session.getTransaction().commit();
+		session.getSessionFactory().close();
+		
+		
 		
 		
 		table = (TableView<ISpolka>) schedulerContext.get(Constants.TABLE_DATA);
