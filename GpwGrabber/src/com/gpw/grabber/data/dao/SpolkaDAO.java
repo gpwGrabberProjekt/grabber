@@ -33,6 +33,13 @@ public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 	private double Pdtygodniemax;
 	private Timestamp Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
 	
+	
+	
+	
+
+	public SpolkaDAO() {}
+	
+	
 	/**
 	 * @param spolkanazwa  Nazwa Spolki w DB
 	 * @param spolkaskrot  Skrot spolki W DB
@@ -48,12 +55,26 @@ public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 	 * @param pdtygodniemax Zmiana max z 52 tyg z danej chwili czasowej w BD
 	 * @param dataaktualizacji Znacznik generowany przez aplikacje
 	 */
-	
-	
+	public SpolkaDAO(String spolkanazwa, String spolkaskrot, double kursotw, double kursmin, double kursmax,
+			double kursbiez, double zmprocdzienna, String czasostzmiany, double obrotszt, double obrotpln,
+			double pdtygodniemin, double pdtygodniemax, Timestamp dataaktualizacji) {
+		super();
+		Spolkanazwa = spolkanazwa;
+		Spolkaskrot = spolkaskrot;
+		Kursotw = kursotw;
+		Kursmin = kursmin;
+		Kursmax = kursmax;
+		Kursbiez = kursbiez;
+		Zmprocdzienna = zmprocdzienna;
+		Czasostzmiany = czasostzmiany;
+		Obrotszt = obrotszt;
+		Obrotpln = obrotpln;
+		Pdtygodniemin = pdtygodniemin;
+		Pdtygodniemax = pdtygodniemax;
+		Dataaktualizacji = dataaktualizacji;
+	}
 
-	public SpolkaDAO() {}
-	
-	
+
 	/* 
 	 * Mapowanie na kolumne w bazie danych Nazwa spolki -> Nazwa
 	 */

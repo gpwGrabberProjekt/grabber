@@ -2,7 +2,7 @@ package com.gpw.grabber.job;
 
 import java.util.ArrayList;
 
-
+import org.hibernate.Session;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -13,6 +13,7 @@ import com.gpw.grabber.constants.Constants;
 import com.gpw.grabber.data.ISpolka;
 import com.gpw.grabber.engine.builders.SpolkaDAOBuilder;
 import com.gpw.grabber.engine.database.DatabasePersistService;
+import com.gpw.grabber.engine.database.HibernateUtil;
 import com.gpw.grabber.engine.database.IDatabasePersistService;
 import com.gpw.grabber.engine.parsing.GpwGrabberParsingEngine;
 import com.gpw.grabber.engine.parsing.IGpwGrabberParsingEngine;
@@ -44,21 +45,35 @@ public class GrabberJob implements Job {
 
 		grabSpolkiFromWebPage();
 		
-		
+		//Session session = HibernateUtil.getSessionFactory().openSession();
 		IDatabasePersistService dbService=new DatabasePersistService();
 		for (ISpolka iSpolka : spolki) {
-			dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
+			try {
+				dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		//DatabasePersistService dbService=new DatabasePersistService();
-		//dbService.persist();
-		
-		
-		
-		
-		table = (TableView<ISpolka>) schedulerContext.get(Constants.TABLE_DATA);
-		table.setItems(data);
+			//Session session = HibernateUtil.getSessionFactory().openSession();
 
-	}
+			
+			//SpolkaDAO spolka = new SpolkaDAO();
+			// spolka.setKursbiez(1.0);
+			// spolka.setDataaktualizacji(new
+			// java.sql.Timestamp(calendar.getTime().getTime()));
+			// spolka.setSpolkanazwa("ABC");
+			// spolka.setSpolkaskrot("adbd");
+			//session.save(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
+			// session.save(spolka);
+
+			 
+		}
+		
+		
+	
+
+	
 
 	private void grabSpolkiFromWebPage() {
 		spolki=parsingEngine.parseWebPage();
