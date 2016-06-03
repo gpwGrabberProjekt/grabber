@@ -27,7 +27,7 @@ public class MalaSpolka implements java.io.Serializable {
 		Spolkaskrot = spolkaskrot;
 	}
 	@Id
-	@Column(name = "Odciskczasu", unique = true, nullable = false)
+	@Column(name = "Odcikczasu", unique = true, nullable = false)
 	public Date getDataaktualizacji() {
 		return Dataaktualizacji;
 	}
