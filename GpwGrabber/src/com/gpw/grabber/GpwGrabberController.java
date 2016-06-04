@@ -157,8 +157,11 @@ public class GpwGrabberController implements Initializable {
 		table.setItems(data);
 		table.setEditable(false);
 
-		// trigger scheduler every minute
-		regexp.setText("0/5 * * * * ? *");
+		/**
+		 * Wyrażenie regularne dla biblioteki Quartz 
+		 *  @see <a href="http://www.cronmaker.com/">Cron Maker</a>
+		 */
+		regexp.setText("0 0/2 * 1/1 * ? *");
 
 		job = JobBuilder.newJob(GrabberJob.class).withIdentity("dummyJobName", "group1").build();
 
