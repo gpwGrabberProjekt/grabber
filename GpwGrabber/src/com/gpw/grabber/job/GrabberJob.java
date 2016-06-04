@@ -45,7 +45,10 @@ public class GrabberJob implements Job {
 
 		grabSpolkiFromWebPage();
 		
-		//Session session = HibernateUtil.getSessionFactory().openSession();
+		/**
+		 * Transformacja Spolka na SpolkaDAO
+		 * 
+		 */
 		IDatabasePersistService dbService=new DatabasePersistService();
 		for (ISpolka iSpolka : spolki) {
 			try {
@@ -55,18 +58,7 @@ public class GrabberJob implements Job {
 				e.printStackTrace();
 			}
 		}
-			//Session session = HibernateUtil.getSessionFactory().openSession();
-
 			
-			//SpolkaDAO spolka = new SpolkaDAO();
-			// spolka.setKursbiez(1.0);
-			// spolka.setDataaktualizacji(new
-			// java.sql.Timestamp(calendar.getTime().getTime()));
-			// spolka.setSpolkanazwa("ABC");
-			// spolka.setSpolkaskrot("adbd");
-			//session.save(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
-			// session.save(spolka);
-
 			 
 		}
 		

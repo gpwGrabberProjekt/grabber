@@ -32,10 +32,6 @@ public class SpolkaDAO implements  java.io.Serializable, ISpolkaDAO {
 	private double Pdtygodniemin;
 	private double Pdtygodniemax;
 	private Timestamp Dataaktualizacji = new Timestamp(new java.util.Date().getTime());
-	
-	
-	
-	
 
 	public SpolkaDAO() {}
 	
