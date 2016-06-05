@@ -58,38 +58,38 @@ public interface ISpolkaDAO {
 	 */
 	void setKursmax(double kursmax);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getKursbiez()
+	/** 
+	 *  Poranie kursu biezacego spolki DAO
 	 */
 	double getKursbiez();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setKursbiez(double)
+	/** 
+	 *  Ustawienie kursu biezacego spolki DAO
 	 */
 	void setKursbiez(double kursbiez);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getZmprocdzienna()
+	/** 
+	 *  Pobranie zmiany % kursu spolki DAO
 	 */
 	double getZmprocdzienna();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setZmprocdzienna(double)
+	/** 
+	 *  Ustawienie zmiany % kursu spolki DAO
 	 */
 	void setZmprocdzienna(double zmprocdzienna);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getCzasostzmiany()
+	/** 
+	 *  Pobranie czasu ostatniej zmiany kursu spolki DAO
 	 */
 	String getCzasostzmiany();
-
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setCzasostzmiany(java.lang.String)
+	
+	/** 
+	 *  Ustawienie czasu ostatniej zmiany kursu spolki DAO
 	 */
 	void setCzasostzmiany(String czasostzmiany);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getObrotszt()
+	/** 
+	 *  Pobranie czasu ostatniej zmiany kursu spolki DAO
 	 */
 	double getObrotszt();
 
