@@ -14,11 +14,16 @@ import com.gpw.grabber.engine.builders.SpolkaBuilder;
 
 
 /**
+ * @author GK & GS
  * Klasa odpowiedzialna analizowe ciÄ…gu znakÃ³w w celu ustalenia jego struktury
  * @see <a href="https://jsoup.org/">https://jsoup.org/</a>
  */
 public class GpwGrabberParsingEngine implements IGpwGrabberParsingEngine {
 
+	/**
+	 * Metoda parsuj¹ca tabele danych spó³ek
+	 * @return lista wierszy tabeli spó³ek
+	 */
 	public ArrayList<ISpolka> parseWebPage() {
 
 		Document doc;
@@ -63,7 +68,9 @@ public class GpwGrabberParsingEngine implements IGpwGrabberParsingEngine {
 	}
 	
 	
-
+	/**
+	 * @return Metoda zwracaj¹ca liste nazw spó³ek
+	 */
 	public ArrayList<String> getListOfSpolkaNames() {
 		ArrayList<ISpolka> listOfSpolki = parseWebPage();
 		ArrayList<String> spolkiNames = new ArrayList<String>();

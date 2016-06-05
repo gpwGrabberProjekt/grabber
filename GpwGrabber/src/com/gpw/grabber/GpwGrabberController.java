@@ -30,7 +30,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- * Kontroler
+ * @author GK & GS
+ * Kontroler sluzy do zarzadzania Interfejsem u¿ytkownika
  */
 
 public class GpwGrabberController implements Initializable {
@@ -116,6 +117,10 @@ public class GpwGrabberController implements Initializable {
 	@FXML
 	private LineChart<String, Double> wykresSpolek;
 
+	/**
+	 * Metoda rozpoczynaj¹ca ³adowanie danych.
+	 * @throws SchedulerException
+	 */
 	public void startGrabberJob() throws SchedulerException {
 		scheduler.resumeJob(job.getKey());
 		System.out.println("Start grabber job");

@@ -22,7 +22,9 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
 /**
- * Klasa odpowiedzialna tworzenie zadan wykonywanych 
+ * @author GK & GS 
+ * Klasa odpowiedzialna tworzenie zadan wykonywanych przez
+ *         scheduler
  * 
  */
 public class GrabberJob implements Job {
@@ -31,6 +33,9 @@ public class GrabberJob implements Job {
 	private IGpwGrabberParsingEngine parsingEngine = new GpwGrabberParsingEngine();
 	private ArrayList<ISpolka> spolki;
 
+	/**
+	 * Metoda reprezentujaca zadanie do wykonania w zaplanowanym czasie
+	 */
 	@SuppressWarnings("unchecked")
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 		System.out.println("PRINT MESSAGE EVERY - job");
@@ -44,12 +49,12 @@ public class GrabberJob implements Job {
 		setData((ObservableList<ISpolka>) schedulerContext.get(Constants.LIST_OF_SPOLKI));
 
 		grabSpolkiFromWebPage();
-		
+
 		/**
 		 * Transformacja Spolka na SpolkaDAO
 		 * 
 		 */
-		IDatabasePersistService dbService=new DatabasePersistService();
+		IDatabasePersistService dbService = new DatabasePersistService();
 		for (ISpolka iSpolka : spolki) {
 			try {
 				dbService.persist(SpolkaDAOBuilder.buildSpolkaDAO(iSpolka));
@@ -58,18 +63,15 @@ public class GrabberJob implements Job {
 				e.printStackTrace();
 			}
 		}
-			
-			 
-		}
-		
-		
-	
 
-	
+	}
 
+	/**
+	 * Pobranie spolek ze strony i zapisanie do listy
+	 */
 	private void grabSpolkiFromWebPage() {
-		spolki=parsingEngine.parseWebPage();
-		
+		spolki = parsingEngine.parseWebPage();
+
 		data.addAll(spolki);
 	}
 

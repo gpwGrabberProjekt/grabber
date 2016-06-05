@@ -10,12 +10,18 @@ import java.util.List;
 import com.gpw.grabber.data.ISpolka;
 import com.gpw.grabber.data.Spolka;
 /**
+ * @author GK
  * Klasa odpowiedzialna z tworzenie obiektow typu Spolka na podstawie przetworzonych wierszy z strony WWW
  * 
  */
 public class SpolkaBuilder {
 	private static int counter = 0;
 
+	/**
+	 * 
+	 * @param wiersz z parsingu czyli jeden wiersz z tabeli ze strony internetowej
+	 * @return ISpolka obiekt reprezentujacy wiersz danych z tabeli
+	 */
 	public static ISpolka buildSpolka(List<String> wiersz) {
 
 		String spolkaNazwa = wiersz.get(0);

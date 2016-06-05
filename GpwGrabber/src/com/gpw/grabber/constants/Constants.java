@@ -2,6 +2,7 @@ package com.gpw.grabber.constants;
 
 
 /**
+ * @author GK
  * Stale
  *  
  */

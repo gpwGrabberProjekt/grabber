@@ -1,6 +1,7 @@
 package com.gpw.grabber.data;
 
 /**
+ * @author GK & GS
  * Interfejs definiujacy opracje na Spolce
  *  
  */
