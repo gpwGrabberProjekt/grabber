@@ -5,7 +5,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Klasa odpowiedzialna za konfiguracje 
  * @see <a href="http://hibernate.org/orm/documentation/5.2/">Hibernate DOC</a>
- * @Author G.S na podstawie tutoriala
+ * @author G.S na podstawie tutoriala
  */
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory = buildSessionFactory();
