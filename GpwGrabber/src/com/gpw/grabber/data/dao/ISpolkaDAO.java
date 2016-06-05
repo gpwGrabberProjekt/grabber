@@ -1,24 +1,30 @@
 package com.gpw.grabber.data.dao;
 
 import java.sql.Timestamp;
+/**
+ * Interfejs kolekcja metod abstrakcyjnych dla SpolkiDAO
+ * @author G.S 
+ */
 import java.util.Date;
 
 public interface ISpolkaDAO {
-
+	/** 
+	 *  Pobranie nazwy spolki DAO
+	 */
 	String getSpolkanazwa();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setSpolkanazwa(java.lang.String)
+	/** 
+	 *  Ustawienie nazwy spolki DAO
 	 */
 	void setSpolkanazwa(String spolkanazwa);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getSpolkaskrot()
+	/** 
+	 *  Pobranie nazwy skroconej spolki DAO
 	 */
 	String getSpolkaskrot();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setSpolkaskrot(java.lang.String)
+	/** 
+	 *  Ustawienie nazwy skroconej spolki DAO
 	 */
 	void setSpolkaskrot(String spolkaskrot);
 

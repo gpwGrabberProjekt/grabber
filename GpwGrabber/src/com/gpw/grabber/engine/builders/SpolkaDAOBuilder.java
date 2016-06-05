@@ -12,6 +12,7 @@ import com.gpw.grabber.data.dao.ISpolkaDAO;
  * Klasa odpowiedzialna z tworzenie obiektow typu SpolkaDAO
  * na podstawie wczesniej stworzonego obiektu Spolka
  * @param spolka Wymagany obiek spolka
+ * @return spolkadao Zracany obiekt typu SpolkaDAO
  * @author G.S 
  */
 public class SpolkaDAOBuilder {
