@@ -28,33 +28,33 @@ public interface ISpolkaDAO {
 	 */
 	void setSpolkaskrot(String spolkaskrot);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getKursotw()
+	/** 
+	 *  Pobranie kursu otwarcia spolki DAO
 	 */
 	double getKursotw();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setKursotw(double)
+	/** 
+	 *  Ustawienie kursu otwarcia spolki DAO
 	 */
 	void setKursotw(double kursotw);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getKursmin()
+	/** 
+	 *  Poranie kursu minimalnego spolki DAO
 	 */
 	double getKursmin();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setKursmin(double)
+	/** 
+	 *  Ustawienie kursu minimalnego spolki DAO
 	 */
 	void setKursmin(double kursmin);
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#getKursmax()
+	/** 
+	 *  Poranie kursu maksymalnego spolki DAO
 	 */
 	double getKursmax();
 
-	/* (non-Javadoc)
-	 * @see com.gpw.grabber.data.dao.INewSpolkaDAO#setKursmax(double)
+	/** 
+	 *  Ustawienie kursu maksymalnego spolki DAO
 	 */
 	void setKursmax(double kursmax);
 
